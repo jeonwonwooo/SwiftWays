@@ -17,36 +17,45 @@ document.addEventListener('DOMContentLoaded', () => {
     updateClock();
 
     // --- INVENTORY DATA ---
-    const inventoryData = {
-        // ... data as is ...
-        'zone-human': [
-            { id: 'H-01', name: 'Identity Shield Protocol', price: '$450.00', category: 'HUMAN CONTROL' },
-            { id: 'H-02', name: 'Reputation Management', price: '$1,200.00', category: 'HUMAN CONTROL' },
-            { id: 'H-03', name: 'Personal Security Detail', price: 'REQ. QUOTE', category: 'HUMAN CONTROL' },
-            { id: 'H-04', name: 'Legacy Erasure', price: '$850.00', category: 'HUMAN CONTROL' }
-        ],
-        // ... dst ...
-        'zone-access': [
-            { id: 'A-01', name: 'Premium Dashboard Access', price: '$199.00/mo', category: 'FULL ACCESS' },
-            { id: 'A-02', name: 'Analytics Suite Pro', price: '$350.00/mo', category: 'FULL ACCESS' },
-            { id: 'A-03', name: 'API Key: Unlimited', price: '$2,500.00', category: 'FULL ACCESS' },
-            { id: 'A-04', name: 'Market Intelligence Feed', price: '$120.00/mo', category: 'FULL ACCESS' },
-            { id: 'A-05', name: 'Priority Network Route', price: '$75.00/mo', category: 'FULL ACCESS' }
-        ],
-        'zone-payment': [
-            { id: 'P-01', name: 'Credits Top Up: 500', price: '$500.00', category: 'TOP UP & PAYMENT' },
-            { id: 'P-02', name: 'Credits Top Up: 1000', price: '$1,000.00', category: 'TOP UP & PAYMENT' },
-            { id: 'P-03', name: 'Credits Top Up: 5000', price: '$5,000.00', category: 'TOP UP & PAYMENT' },
-            { id: 'P-04', name: 'Escrow Service Fee', price: '5%', category: 'TOP UP & PAYMENT' },
-            { id: 'P-05', name: 'Anonymous Transfer', price: '$25.00', category: 'TOP UP & PAYMENT' }
-        ],
-        'zone-build': [
-            { id: 'B-01', name: 'Custom Landing Page', price: 'FROM $1,500', category: 'BUILD ZONE' },
-            { id: 'B-02', name: 'System Integration', price: '$250.00/hr', category: 'BUILD ZONE' },
-            { id: 'B-03', name: 'Server Architecture', price: 'REQ. QUOTE', category: 'BUILD ZONE' },
-            { id: 'B-04', name: 'Security Audit', price: '$3,000.00', category: 'BUILD ZONE' }
-        ]
-    };
+const inventoryData = {
+    'zone-human': [
+        { id: 'HC-01', name: 'Jasa Curhat', price: 'Rp12.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-02', name: 'Jasa Mainin Akun', price: 'Rp15.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-03', name: 'Jasa Diving Story, Channel, Personal', price: 'Rp18.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-04', name: 'Jasa Save Kontak', price: 'Rp7.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-05', name: 'Jasa Pembersihan', price: 'Rp20.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-06', name: 'Jasa Push BBC', price: 'Rp10.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-07', name: 'Jasa Admin & Account Assist', price: 'Rp16.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-08', name: 'Jasa Jawab Soal Interview (WWC)', price: 'Rp25.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-09', name: 'Jasa Confess', price: 'Rp10.000', category: 'HUMAN CONTROL' },
+        { id: 'HC-10', name: 'Jasa Long Text', price: 'Rp20.000', category: 'HUMAN CONTROL' }
+    ],
+    'zone-access': [
+        { id: 'FA-01', name: 'Streaming Platforms', price: 'RpVAR', category: 'FULL ACCESS' },
+        { id: 'FA-02', name: 'Music Platforms', price: 'RpVAR', category: 'FULL ACCESS' },
+        { id: 'FA-03', name: 'Educational Platforms', price: 'RpVAR', category: 'FULL ACCESS' },
+        { id: 'FA-04', name: 'Social Media Platforms', price: 'RpVAR', category: 'FULL ACCESS' },
+        { id: 'FA-05', name: 'Editing Platforms', price: 'RpVAR', category: 'FULL ACCESS' },
+        { id: 'FA-06', name: 'Others', price: 'RpVAR', category: 'FULL ACCESS' }
+    ],
+    'zone-payment': [
+        { id: 'TP-01', name: 'Top-Up E-Wallet & Bank', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' },
+        { id: 'TP-02', name: 'Top-Up Games', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' },
+        { id: 'TP-03', name: 'Top-Up Pulsa', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' },
+        { id: 'TP-04', name: 'Top-Up Paket Data', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' },
+        { id: 'TP-05', name: 'Utilities Needs', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' },
+        { id: 'TP-06', name: 'Social Media Needs', price: 'RpVAR', category: 'TOP UP & DIGITAL PAYMENT' }
+    ],
+    'zone-build': [
+        { id: 'WB-01', name: 'Jasa Website', price: 'RpVAR', category: 'BUILD ZONE' }
+    ],
+    'zone-vnum': [
+        { id: 'VN-01', name: 'Virtual Number & Verification', price: 'RpVAR', category: 'ACCESS LANE' }
+    ],
+    'zone-academic': [
+        { id: 'AC-01', name: 'Academic Services', price: 'RpVAR', category: 'SUPPORT ZONE' }
+    ]
+};
 
     // --- MODAL ELEMENTS ---
     const modal = document.getElementById('item-modal');
@@ -62,16 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentZone = 'zone-human';
 
     // --- MODAL FUNCTIONS ---
-    function openModal(item) {
-        modalItemId.textContent = `// ${item.id}`;
-        modalItemTitle.textContent = item.name;
-        modalItemPrice.textContent = item.price;
-        modalCategory.textContent = item.category;
-        const orderCode = `SWIFT-${item.id}-2024`;
-        orderCodeInput.value = orderCode;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+    // di openModal()
+    function setTextareaAutoresize(el) {
+    el.style.height = 'auto';
+    el.style.height = (el.scrollHeight) + 'px';
+}
+
+// Pemakaian di openModal
+orderCodeInput.value = '[ORDER]\nNama:\nUsername:\nPesanan: ...'; // dsb
+setTextareaAutoresize(orderCodeInput);
+function openModal(item) {
+    modalItemId.textContent = `// ${item.id}`;
+    modalItemTitle.textContent = item.name;
+    modalItemPrice.innerHTML = `
+        <button class="action-btn secondary" onclick="navigator.clipboard.writeText(document.getElementById('order-code').value)">Copy Format Pemesanan</button>
+        <span class="harga-label">${item.price}</span>
+    `;
+    // Format default pemesanan
+    orderCodeInput.value =
+        `[ORDER]\nNama:\nUsername:\nPesanan: ${item.name}\nJumlah/Harga: ${item.price}\nCatatan:\nTerima kasih!`;
+    setTextareaAutoresize(orderCodeInput);
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';

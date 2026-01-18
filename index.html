@@ -258,19 +258,22 @@
             </div>
             
             <div class="order-code-block">
-                <span class="code-label">ORDER CODE</span>
-                <div class="code-container">
-                    <input type="text" class="code-input" id="order-code" readonly value="SWIFT-H01-2024">
-                    <button class="copy-btn" id="copy-code-btn">
-                        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        <span class="copy-text">AUTO-COPY</span>
-                    </button>
-                </div>
-                <span class="copy-feedback" id="copy-feedback">CODE TRANSMITTED TO CLIPBOARD</span>
-            </div>
+    <span class="code-label">ORDER FORMAT</span>
+    <div class="code-container">
+        <div class="order-left">
+            <textarea class="code-input" id="order-code" readonly spellcheck="false"></textarea>
+            <div class="order-price" id="order-price"></div>
+        </div>
+        <button class="copy-btn" id="copy-code-btn">
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-text">AUTO-COPY</span>
+        </button>
+    </div>
+    <span class="copy-feedback" id="copy-feedback">FORMAT COPIED TO CLIPBOARD</span>
+</div>
             
             <div class="modal-actions">
                 <a href="#" class="action-btn primary">INITIATE ORDER</a>
