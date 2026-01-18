@@ -742,6 +742,13 @@ a {
     position: relative;
     transform: scale(0.9) translateY(20px);
     transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+    max-height: 94vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 500px;
+    background: #111;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .modal-overlay.active .carbon-modal {
